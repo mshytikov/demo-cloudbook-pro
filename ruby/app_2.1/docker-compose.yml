@@ -1,0 +1,10 @@
+version: '2'
+services:
+  app:
+    image: ruby:2.1.10
+    working_dir: /workdir
+    environment:
+      BUNDLE_PATH: /workdir/.bundle
+    command: ruby app.rb
+    volumes:
+      - .:/workdir
