@@ -1,0 +1,12 @@
+version: '2'
+services:
+  app:
+    image: ruby:2.4
+    working_dir: /workdir
+    environment:
+      BUNDLE_PATH: /workdir/.bundle
+    command: rails server
+    volumes:
+      - .:/workdir
+    ports:
+      - "3000:3000"
