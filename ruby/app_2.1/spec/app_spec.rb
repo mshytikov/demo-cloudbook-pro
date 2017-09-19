@@ -1,4 +1,4 @@
-require_relative '../app.rb'
+require_relative '../src/app.rb'
 
 RSpec.describe 'Simple app' do
   it '#hello_world' do
