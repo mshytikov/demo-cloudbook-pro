@@ -3,7 +3,7 @@ services:
   app:
     image: maven:3.3.9-jdk-7
     working_dir: /workdir
-    command: bash
+    command: mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
     volumes:
       - .:/workdir
       - .m2:/root/.m2

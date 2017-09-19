@@ -5,6 +5,6 @@ services:
     working_dir: /workdir
     environment:
       BUNDLE_PATH: /workdir/.bundle
-    command: ruby app.rb
+    command: ruby src/app.rb
     volumes:
       - .:/workdir
