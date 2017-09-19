@@ -1,0 +1,12 @@
+version: '2'
+services:
+  app:
+    image: python:3.6
+    working_dir: /workdir
+    environment:
+      PYTHONUSERBASE: /workdir/.pip
+      PYTHONDONTWRITEBYTECODE: 1
+      PATH: "/workdir/.pip/bin/:/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin"
+    command: myapp
+    volumes:
+      - .:/workdir
