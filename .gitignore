@@ -1,2 +1,3 @@
-.bundler
-.pip
+.bundle/
+.pip/
+.ipynb_checkpoints/
