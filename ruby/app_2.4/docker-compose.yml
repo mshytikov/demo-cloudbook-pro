@@ -5,8 +5,8 @@ services:
     working_dir: /workdir
     environment:
       BUNDLE_PATH: /workdir/.bundle
-    command: rails server
+    command: ruby app.rb
     volumes:
       - .:/workdir
     ports:
-      - "3000:3000"
+      - "4567:4567"
