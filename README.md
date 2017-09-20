@@ -5,7 +5,7 @@ Any application runs withing container based on official docker image.
 Container is pure and don't have app specific state stored withing it.
 And container is automatically removed when it exits. (docker run --rm)
 
-And application specific dependencies are stored withing project workdir and
+All application specific dependencies are stored withing project workdir and
 mounted to container.
 
 ### Setup
