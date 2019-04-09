@@ -19,9 +19,3 @@ RUN groupmod -g $NB_GID -o $(id -g -n $NB_USER)
 RUN echo "$NB_USER ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/notebook
 
 USER jovyan
-
-# Install jupyterlab
-
-RUN conda install --yes -c conda-forge jupyterlab
-
-RUN jupyter serverextension enable --py jupyterlab --sys-prefix

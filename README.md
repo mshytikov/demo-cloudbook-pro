@@ -9,30 +9,33 @@ All application specific dependencies are stored withing project workdir and
 mounted to container.
 
 ### Setup
-For all applications (but jupyter) the setup is identical.
+For all applications the setup is identical.
 Go to application directory and run:
 ```
-docker-compose run --rm app ./bin/setup
+dc-run ./bin/setup
 ```
 
-Depends on application it could have different scripts to run it.
-But in most cases this should just work:
+### Start
+For all applications the start is identical.
+Go to application directory and dc up:
 ```
-docker-compose up app
-```
-
-For `jupyter` extra step is required to workaround permissions.
-The step is about to build and use local image.
-Go to application directory and run:
-```
-./bin/setup.local
+dc up
 ```
 
-To start jupyter use shortcut
+### Example
+To start Jupyter from 0:
 ```
-./bin/up jupyter
+cd python/jupyter
+dc-run ./bin/setup
+dc up
+
 ```
-Or jupyter lab
+
+If you lunch jupyter on remote cloudbook-pro instance, then run in separate tab:
 ```
-./bin/up jupyterlab
+cloudbook port 8888
 ```
+
+Just open http://localhost:8888
+
+
