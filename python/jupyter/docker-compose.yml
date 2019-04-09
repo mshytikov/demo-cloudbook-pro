@@ -9,19 +9,15 @@ services:
     # your local image with correct permissions
     image: $USER/scipy-notebook:$UID.$GID
     environment:
+      JUPYTER_ENABLE_LAB: "yes"
       JOBLIB_TEMP_FOLDER: /tmp
+      PYTHONUSERBASE: /workdir/.pip
+      PYTHONPATH: /workdir/src/python
+      PYTHONDONTWRITEBYTECODE: 1
+      PATH: "/workdir/.pip/bin/:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      TMPDIR: /workdir/tmp
     working_dir: /workdir
     volumes:
       - .:/workdir
-
-  jupyter:
-    extends: app
-    command: jupyter notebook
-    ports:
-      - 8888:8888
-
-  jupyterlab:
-    extends: app
-    command: jupyter lab --ip=0.0.0.0
     ports:
       - 8888:8888
