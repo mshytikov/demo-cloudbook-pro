@@ -17,13 +17,13 @@ dc-run ./bin/setup
 
 ### Start
 For all applications the start is identical.
-Go to application directory and dc up:
+Go to application directory and run:
 ```
 dc up
 ```
 
 ### Example
-To start Jupyter from 0:
+To start Jupyter from scratch:
 ```
 cd python/jupyter
 dc-run ./bin/setup
