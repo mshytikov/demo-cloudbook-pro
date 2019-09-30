@@ -1,3 +1,9 @@
 [submodule "python/airflow"]
 	path = python/airflow
 	url = git@github.com:mshytikov/airflow-dev-env.git
+[submodule "python/eclecticiq/src/cabby/src"]
+	path = python/eclecticiq/src/cabby/src
+	url = https://github.com/eclecticiq/cabby.git
+[submodule "python/eclecticiq/src/OpenTAXII/src"]
+	path = python/eclecticiq/src/OpenTAXII/src
+	url = https://github.com/eclecticiq/OpenTAXII.git
