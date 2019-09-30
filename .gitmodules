@@ -1,0 +1,3 @@
+[submodule "python/airflow"]
+	path = python/airflow
+	url = git@github.com:mshytikov/airflow-dev-env.git
