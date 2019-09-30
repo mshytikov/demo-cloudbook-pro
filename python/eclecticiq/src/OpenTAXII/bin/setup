@@ -1,0 +1,8 @@
+#!/bin/bash
+pip install --user -r src/requirements-dev.txt
+
+cd src
+py.test --cov src/cabby
+
+# To run full tox
+# tox
