@@ -1,0 +1,8 @@
+#!/bin/bash
+
+./src/docker/entrypoint.sh gunicorn opentaxii.http:app --workers=2 \
+  --log-level=debug \
+  --log-file=- \
+  --timeout=300 \
+  --config=python:opentaxii.http \
+  --bind=0.0.0.0:80

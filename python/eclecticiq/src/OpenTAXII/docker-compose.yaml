@@ -1,0 +1,44 @@
+version: '3.6'
+services:
+  app:
+    image: python:3.6
+    working_dir: /workdir
+    command: ./bin/start
+    volumes:
+      - .:/workdir
+      - "./src/examples:/input:ro"
+    environment:
+      PYTHONUSERBASE: /workdir/.pip
+      PYTHONDONTWRITEBYTECODE: 1
+      PATH: "/workdir/.pip/bin/:/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin"
+      OPENTAXII_AUTH_SECRET: secrettwo
+      OPENTAXII_DOMAIN: 192.168.59.103
+      OPENTAXII_USER: user1
+      OPENTAXII_PASS: pass1
+      DATABASE_HOST: auth-db
+      DATABASE_NAME: opentaxii1
+      DATABASE_USER: user1
+      DATABASE_PASS: password1
+    depends_on:
+      - auth-db
+    networks:
+      eclecticiq-net:
+        aliases:
+          - opentaxii2
+
+  auth-db:
+    image: postgres:11
+    environment:
+      POSTGRES_USER: user1
+      POSTGRES_PASSWORD: password1
+      POSTGRES_DB: opentaxii1
+    volumes:
+       - "./data/pgdata:/var/lib/postgresql/data"
+    networks:
+      eclecticiq-net:
+        aliases:
+          - auth-db
+
+networks:
+  eclecticiq-net:
+    external: true

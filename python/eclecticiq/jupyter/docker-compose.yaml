@@ -19,5 +19,12 @@ services:
     working_dir: /workdir
     volumes:
       - .:/workdir
+      - ../src:/eclecticiq
     ports:
       - 8888:8888
+    networks:
+      - eclecticiq-net
+
+networks:
+  eclecticiq-net:
+    external: true

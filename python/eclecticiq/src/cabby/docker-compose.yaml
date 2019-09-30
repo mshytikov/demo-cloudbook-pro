@@ -1,4 +1,4 @@
-version: '3'
+version: '3.6'
 services:
   app:
     image: python:3.6
@@ -10,3 +10,10 @@ services:
     command: bash
     volumes:
       - .:/workdir
+    networks:
+      eclecticiq-net:
+        aliases:
+          - cabby
+networks:
+  eclecticiq-net:
+    external: true
