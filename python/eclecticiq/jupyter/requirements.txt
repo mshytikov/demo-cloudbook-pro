@@ -1,1 +1,2 @@
-bokeh
+-r /eclecticiq/cabby/src/requirements.txt
+-e /eclecticiq/cabby/src/
