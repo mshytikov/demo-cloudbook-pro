@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    image: node:12.10
+    working_dir: /workdir
+    command: bash
+    volumes:
+      - .:/workdir
